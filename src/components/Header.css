@@ -1,0 +1,114 @@
+/* Base Header Styles */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 5px 24px;
+  border-bottom: 1px solid #ddd;
+  font-family: Arial, sans-serif;
+  flex-wrap: wrap; /* Allow wrapping on small screens */
+}
+
+.header-left .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #197fe6;
+}
+
+/* Search bar container */
+.header-center {
+  flex: 1;
+  max-width: 500px;
+  margin: 8px 16px;
+}
+
+.search-bar {
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 14px;
+}
+
+/* Right section: nav + icons */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+/* Navigation links */
+.nav-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: #197fe6;
+}
+
+/* Icon section */
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.icons .icon:hover {
+  color: #197fe6;
+}
+
+/* ---------- Responsive Breakpoints ---------- */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 16px;
+  }
+
+  .header-left, .header-center, .header-right {
+    width: 100%;
+    margin-bottom: 12px;
+  }
+
+  .header-center {
+    margin: 0 0 12px;
+  }
+
+  .nav-links {
+    justify-content: center;
+  }
+
+  .icons {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .search-bar {
+    font-size: 13px;
+    padding: 8px 12px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .icons {
+    font-size: 18px;
+  }
+}

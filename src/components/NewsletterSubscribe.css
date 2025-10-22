@@ -1,0 +1,121 @@
+.newsletter-section {
+  padding-top: 4rem; /* py-16 */
+  padding-bottom: 4rem;
+}
+
+.newsletter-container {
+  background-color: rgba(59, 130, 246, 0.1); /* bg-primary/10 approx with Tailwind's primary blue */
+  border-radius: 1rem; /* rounded-xl */
+  padding: 2rem; /* p-8 */
+  max-width: 48rem; /* roughly md:p-12 container size */
+  margin: 0 auto;
+  text-align: center;
+  color: #111827; /* text-gray-900 */
+  /* Dark mode simulation */
+}
+
+/* Dark mode - you can manage this via a CSS class on body or prefer-color-scheme media query */
+@media (prefers-color-scheme: dark) {
+  .newsletter-container {
+    background-color: rgba(59, 130, 246, 0.2); /* bg-primary/20 */
+    color: white;
+  }
+
+  .newsletter-input {
+    background-color: #1f2937; /* dark:bg-gray-800 */
+    color: white;
+    placeholder {
+      color: #9ca3af; /* placeholder:text-gray-500 */
+    }
+  }
+}
+
+.newsletter-title {
+  font-size: 1.875rem; /* text-3xl */
+  font-weight: 700; /* font-bold */
+  margin-bottom: 0.5rem; /* mb-2 */
+}
+
+.newsletter-description {
+  color: #4b5563; /* text-gray-600 */
+  margin-bottom: 1.5rem; /* mb-6 */
+  max-width: 40rem; /* max-w-lg */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .newsletter-description {
+    color: #d1d5db; /* dark:text-gray-300 */
+  }
+}
+
+.newsletter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 28rem; /* max-w-md */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 640px) {
+  /* sm:flex-row */
+  .newsletter-form {
+    flex-direction: row;
+  }
+}
+
+.newsletter-input {
+  flex-grow: 1;
+  width: 100%;
+  min-width: 0;
+  resize: none;
+  overflow: hidden;
+  border-radius: 0.5rem; /* rounded-lg */
+  color: #111827; /* text-gray-900 */
+  border: none;
+  background-color: white;
+  height: 3rem; /* h-12 */
+  padding-left: 1rem; /* px-4 */
+  font-size: 1rem; /* text-base */
+  font-weight: 400; /* font-normal */
+  line-height: 1.5rem; /* leading-normal */
+  outline: none;
+  box-sizing: border-box;
+}
+
+.newsletter-input::placeholder {
+  color: #6b7280; /* placeholder:text-gray-500 */
+}
+
+.newsletter-input:focus {
+  outline: 2px solid rgba(59, 130, 246, 0.5); /* focus:ring-2 focus:ring-primary/50 */
+  outline-offset: 0;
+}
+
+.newsletter-button {
+  min-width: 5.25rem; /* min-w-[84px] */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 0.5rem; /* rounded-lg */
+  height: 3rem; /* h-12 */
+  padding-left: 1.5rem; /* px-6 */
+  padding-right: 1.5rem;
+  background-color: #3b82f6; /* bg-primary */
+  color: white;
+  font-size: 1rem; /* text-base */
+  font-weight: 700; /* font-bold */
+  line-height: 1.5rem; /* leading-normal */
+  letter-spacing: 0.015em; /* tracking-[0.015em] */
+  border: none;
+  transition: background-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.newsletter-button:hover {
+  background-color: rgba(59, 130, 246, 0.9); /* hover:bg-primary/90 */
+}
