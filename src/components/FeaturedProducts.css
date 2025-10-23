@@ -3,6 +3,7 @@
   background-color: #f9f9f9;
 }
 
+
 .section-title {
   font-size: 24px;
   margin-bottom: 20px;
@@ -45,7 +46,24 @@
   font-size: 14px;
   color: #888;
 }
+.product-button {
+    background-color: #4ca3af; 
+    color: white;
+    padding: 12px 22px;
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 12px;
+    text-align: center; 
+    text-decoration: none; 
+    text-transform: capitalize;
+    display: inline-block; 
+    transition: background-color 0.3s ease; 
+}
 
+.product-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
 /* Optional: Hide scrollbar on WebKit (Chrome, Safari) */
 .product-list::-webkit-scrollbar {
   display: none;

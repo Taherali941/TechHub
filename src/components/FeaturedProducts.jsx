@@ -54,6 +54,7 @@ const FeaturedProducts = () => {
             />
             <h3 className="product-title">{product.title}</h3>
             <p className="product-price">{product.price}</p>
+            <button className='product-button'>add to cart</button>
           </div>
         ))}
       </div>
