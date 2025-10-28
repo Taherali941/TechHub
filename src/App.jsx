@@ -1,14 +1,12 @@
 import { useEffect, useState } from "react"
-import FeaturedProducts from "./components/FeaturedProducts.jsx"
-import Footer from "./components/Footer.jsx"
-import Header from "./components/Header.jsx"
-import Hero from "./components/Hero.jsx"
-import NewsletterSubscribe from "./components/NewsletterSubscribe.jsx"
-import PopularCategories from "./components/PopularCategories.jsx"
 import LoginPage from "./Auth/LoginPage.jsx"
+import HomePage from "./pages/HomePage.jsx"
+import { CartProvider } from "./contexts/CartContext.jsx"
+import ShoppingCart from "./pages/ShoppingCart.jsx"
 
 function App() {
   const[Loggedin,isLoggedin] = useState(false)
+  const [currentPage, setCurrentPage] = useState("home"); 
     useEffect(()=>{
       const login = localStorage.getItem("loggedin")
       if(login === 'true'){
@@ -20,12 +18,14 @@ function App() {
     }
   return (
     <>
-      <Header />
-      <Hero />
-      <FeaturedProducts />
-      <PopularCategories />
-      <NewsletterSubscribe />
-      <Footer />
+    <CartProvider>
+      {currentPage === "home" && (
+        <HomePage onViewCart={() => setCurrentPage("cart")} />
+      )}
+      {currentPage === "cart" && (
+        <ShoppingCart onBackToHome={() => setCurrentPage("home")} />
+      )}
+    </CartProvider>
     </>
   )
 }

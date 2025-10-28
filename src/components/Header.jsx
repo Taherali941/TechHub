@@ -1,5 +1,5 @@
 import './Header.css';
-const Header = () => {
+const Header = ({onViewCart}) => {
   return (
     <header className="header">
       <div className="header-left">
@@ -12,7 +12,7 @@ const Header = () => {
 
       <div className="header-right">
         <nav className="nav-links">
-          <a href="#">Categories</a>
+          <a href="#" onClick={(e) => { e.preventDefault(); onViewCart(); }}>Categories</a>
           <a href="#">Deals</a>
           <a href="#">New Arrivals</a>
         </nav>

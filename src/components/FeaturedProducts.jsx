@@ -1,3 +1,4 @@
+import { useCart } from "../contexts/CartContext";
 import './FeaturedProducts.css';
 // Import images from the assets folder
 import headphonesImage from '../assets/product-arduino.jpg';
@@ -41,20 +42,21 @@ const products = [
 ];
 
 const FeaturedProducts = () => {
+  const { addToCart } = useCart();
   return (
     <div className="featured-products">
       <h2 className="section-title">Featured Products</h2>
       <div className="product-list">
-        {products.map(product => (
-          <div className="product-box" key={product.id}>
+        {products?.map(p => (
+          <div className="product-box" key={p.id}>
             <img
-              src={product.image}
-              alt={product.title}
+              src={p.image}
+              alt={p.title}
               className="product-image"
             />
-            <h3 className="product-title">{product.title}</h3>
-            <p className="product-price">{product.price}</p>
-            <button className='product-button'>add to cart</button>
+            <h3 className="product-title">{p.title}</h3>
+            <p className="product-price">{p.price}</p>
+            <button className='product-button' onClick={() => addToCart(p)}>add to cart</button>
           </div>
         ))}
       </div>
