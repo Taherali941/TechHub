@@ -1,0 +1,107 @@
+/* ---------- DELIVERY DETAILS SECTION ---------- */
+
+.delivery-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.delivery-header h2 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #222;
+}
+
+/* "Add New Address" button */
+.add-address-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 40px;
+  padding: 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #2563eb;
+  background: rgba(37, 99, 235, 0.1);
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.add-address-btn:hover {
+  background: rgba(37, 99, 235, 0.2);
+}
+
+/* Addresses container */
+.delivery-addresses {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .delivery-addresses {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Individual address cards */
+.address-card {
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  background-color: #fff;
+}
+
+.address-card h3 {
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.25rem;
+}
+
+.address-card p {
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+}
+
+/* Default badge */
+.address-default {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: rgba(37, 99, 235, 0.15);
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.7rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+/* Address actions */
+.address-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.address-actions button {
+  background: none;
+  border: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: #2563eb;
+  transition: color 0.2s;
+}
+
+.address-actions button:hover {
+  text-decoration: underline;
+}
+
+.address-actions .remove {
+  color: #dc2626;
+}

@@ -56,7 +56,7 @@ const FeaturedProducts = () => {
             />
             <h3 className="product-title">{p.title}</h3>
             <p className="product-price">{p.price}</p>
-            <button className='product-button' onClick={() => addToCart(p)}>add to cart</button>
+            <button className='product-button' onClick={() => {addToCart(p) ,console.log(p)}}>add to cart</button>
           </div>
         ))}
       </div>

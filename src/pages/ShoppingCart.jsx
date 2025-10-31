@@ -1,22 +1,21 @@
 import React from "react";
+import './ShoppingCart.css'
 import { useCart } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const ShoppingCart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
-  console.log(cartItems)
-
   const subtotal = cartItems.reduce(
     (sum, item) => sum + item.price * item.quantity,
     0
   );
-
   if (cartItems.length === 0) {
     return (
       <div className="cart-empty">
         <div className="empty-icon">🛒</div>
         <h2>Your cart is empty</h2>
         <p>Looks like you haven’t added anything yet.</p>
-        <a href="/" className="primary-btn">Start Shopping</a>
+        <Link to="/">start Shopping</Link>
       </div>
     );
   }

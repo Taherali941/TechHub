@@ -1,11 +1,14 @@
 import React from "react";
 import "./LoginPage.css";
+import { useNavigate } from "react-router-dom";
 
-const LoginPage = ({isLoggedin}) => {
+const LoginPage = ({setIsLoggedIn}) => {
+  const navigate = useNavigate();
   const handleClick=(e)=>{
-      e.preventDefault();
+      e.preventDefault()
       localStorage.setItem("loggedin","true")
-      isLoggedin(true)
+      setIsLoggedIn(true)
+      navigate('/')
     }
 
   return (
@@ -20,7 +23,7 @@ const LoginPage = ({isLoggedin}) => {
               <p>Login to continue to your account.</p>
             </div>
 
-            <form className="login-form">
+            <form className="login-form" >
               <div className="form-group">
                 <label>Email or Username</label>
                 <input
@@ -37,7 +40,7 @@ const LoginPage = ({isLoggedin}) => {
                 />
               </div>
 
-              <button type="submit" className="btn-primary" onClick={handleClick}>
+              <button type="submit" className="btn-primary" onClick={handleClick} >
                 Login
               </button>
 

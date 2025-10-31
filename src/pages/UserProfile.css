@@ -1,0 +1,46 @@
+/* ---------- LAYOUT / CONTAINER ---------- */
+.account-main {
+  flex: 1;
+  padding: 1.5rem;
+  /* background-color: #f9fafb; */
+  min-height: 100vh;
+}
+
+.account-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.account-header {
+  text-align: left;
+}
+
+.account-header h1 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #1f2937;
+}
+
+.account-header p {
+  color: #6b7280;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+/* ---------- GLOBAL CARD STYLE ---------- */
+.section-card {
+  background-color: #fff;
+  border: 1px solid #e5e7eb; /* ✅ replaces Tailwind border-border-soft */
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Optional subtle hover for cards */
+.section-card:hover {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.3s ease;
+}

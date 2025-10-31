@@ -5,10 +5,10 @@ import Header from "../components/Header.jsx"
 import Hero from "../components/Hero.jsx"
 import NewsletterSubscribe from "../components/NewsletterSubscribe.jsx"
 import PopularCategories from "../components/PopularCategories.jsx"
-const HomePage = ({onViewCart}) => {
+const HomePage = () => {
   return (
     <>
-      <Header onViewCart={onViewCart}/>
+      <Header />
       <Hero />
       <FeaturedProducts />
       <PopularCategories />

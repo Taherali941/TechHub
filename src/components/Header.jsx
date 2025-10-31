@@ -1,5 +1,6 @@
+import { Link } from "react-router-dom";
 import './Header.css';
-const Header = ({onViewCart}) => {
+const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
@@ -12,14 +13,11 @@ const Header = ({onViewCart}) => {
 
       <div className="header-right">
         <nav className="nav-links">
-          <a href="#" onClick={(e) => { e.preventDefault(); onViewCart(); }}>Categories</a>
-          <a href="#">Deals</a>
-          <a href="#">New Arrivals</a>
+          <Link to="/ShoppingCart">Cart</Link>
+          <Link to="/deals">Deals</Link>
+          <Link to="/newArrival">New Arrival</Link>
+          <Link to="/UserProfile">Profile</Link>
         </nav>
-        <div className="icons">
-          <span className="icon">🛒</span>
-          <span className="icon">👤</span>
-        </div>
       </div>
     </header>
   );
