@@ -14,7 +14,7 @@ const UserProfile = ({setIsLoggedIn}) => {
         </div>
             <ProfileDetails />
             <DeliveryDetail />
-            <LogoutPage />
+            <LogoutPage setIsLoggedIn={setIsLoggedIn}/>
       </div>
     </main>
   );

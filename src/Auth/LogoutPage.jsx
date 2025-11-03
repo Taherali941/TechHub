@@ -1,9 +1,7 @@
-import { useNavigate } from 'react-router-dom';
-import LoginPage from './LoginPage';
 import './LogoutPage.css'
-
+import { useNavigate } from "react-router-dom";
 const LogoutPage = ({setIsLoggedIn}) => {
-  const navigate = useNavigate();
+    const navigate = useNavigate()
     const handleClick=()=>{
       localStorage.removeItem("loggedin")
       setIsLoggedIn(false)
