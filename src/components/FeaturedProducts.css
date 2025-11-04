@@ -1,9 +1,19 @@
 .featured-products {
   padding: 40px 20px;
   background-color: #f9f9f9;
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
-
-
+.featured-products::-webkit-scrollbar{
+  display: none;
+}
+.featured-products,.product-list,.product-box{
+  user-select: none;
+}
 .section-title {
   font-size: 24px;
   margin-bottom: 20px;
@@ -13,10 +23,10 @@
 .product-list {
   display: flex;
   justify-content: center;
-  overflow-x: auto;
   gap: 16px;
   padding-bottom: 10px;
-  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  width: max-content;
 }
 
 .product-box {
@@ -34,6 +44,7 @@
   height: 150px;
   object-fit: contain;
   margin-bottom: 12px;
+  pointer-events: none;
 }
 
 .product-title {

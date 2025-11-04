@@ -2,6 +2,7 @@ import React from "react";
 import './ShoppingCart.css'
 import { useCart } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
+import Header from "../components/Header";
 
 const ShoppingCart = () => {
   const { cartItems, removeFromCart, updateQuantity } = useCart();
@@ -21,6 +22,8 @@ const ShoppingCart = () => {
   }
 
   return (
+    <>
+    <Header />
     <div className="cart-container">
       <main>
         <h1>Shopping Cart</h1>
@@ -83,6 +86,7 @@ const ShoppingCart = () => {
         </div>
       </main>
     </div>
+    </>
   );
 };
 

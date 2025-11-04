@@ -1,12 +1,13 @@
 import React from 'react'
 import './ProfileDetails.css'
+import { Link } from 'react-router-dom'
 const ProfileDetails = () => {
   return (
     <div>
                 {/* Profile Section */}
         <section>
           <div className="section-header">
-            <h2>Profile Details</h2>
+            <h2>Profile Details </h2>
           </div>
 
           <div className="section-card">

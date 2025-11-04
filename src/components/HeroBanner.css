@@ -3,16 +3,15 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  border-radius: 50px;
+  border-radius: 25px;
   height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 20px;
-  margin: 30px;
+  margin-top: 15px;
   color: white;
-  position: relative;
 }
 
 /* Optional dark overlay

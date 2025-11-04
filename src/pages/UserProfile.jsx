@@ -3,8 +3,11 @@ import ProfileDetails from "../components/ProfileDetails";
 import DeliveryDetail from "../components/DeliveryDetail";
 import LogoutPage from "../Auth/LogoutPage";
 import './UserProfile.css'
+import Header from "../components/Header";
 const UserProfile = ({setIsLoggedIn}) => {
   return (
+    <>
+      <Header />
     <main className="account-main">
       <div className="account-container">
         {/* Header */}
@@ -17,6 +20,7 @@ const UserProfile = ({setIsLoggedIn}) => {
             <LogoutPage setIsLoggedIn={setIsLoggedIn}/>
       </div>
     </main>
+    </>
   );
 };
 
