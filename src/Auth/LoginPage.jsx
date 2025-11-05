@@ -1,15 +1,26 @@
 import React from "react";
 import "./LoginPage.css";
 import { useNavigate } from "react-router-dom";
+import {useForm} from "react-hook-form";
 
 const LoginPage = ({setIsLoggedIn}) => {
   const navigate = useNavigate();
-  const handleClick=(e)=>{
+
+  //  form handling
+  const {
+    register,
+    handleSubmit,
+    watch,
+    formState:{errors},
+  } = useForm();
+
+  function onSubmit(data,e){
       e.preventDefault()
       localStorage.setItem("loggedin","true")
       setIsLoggedIn(true)
       navigate('/')
-    }
+    console.log('fghjk',data)
+  }
 
   return (
     <div className="login-page">
@@ -23,13 +34,21 @@ const LoginPage = ({setIsLoggedIn}) => {
               <p>Login to continue to your account.</p>
             </div>
 
-            <form className="login-form" >
+            <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
               <div className="form-group">
                 <label>Email or Username</label>
                 <input
                   type="text"
                   placeholder="Enter your email or username"
-                />
+                  {...register(
+                    'email',
+                    {
+                      required:true,
+                      minLength:{value:3,message:"min len atleast 3"}
+                    }
+                  )}
+                  />
+                  {errors.email && <p>{errors.email.message}</p>}
               </div>
 
               <div className="form-group">
@@ -37,10 +56,18 @@ const LoginPage = ({setIsLoggedIn}) => {
                 <input
                   type="password"
                   placeholder="Enter your password"
+                  {...register('password',
+                    {
+                      required:true,
+                      minLength:{value:6,message:"min length atleast 6"},
+                      maxLength:{value:6,message:"max length atleast 8"},
+                    }
+                  )}
                 />
+                {errors.password && <p>{errors.password.message}</p>}
               </div>
 
-              <button type="submit" className="btn-primary" onClick={handleClick} >
+              <button type="submit" className="btn-primary"  >
                 Login
               </button>
 

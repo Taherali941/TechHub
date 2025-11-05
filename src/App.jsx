@@ -36,7 +36,7 @@ function AppContent() {
       { path: "/NewArrival",element:<NewArrival />}
     ],
   },
-]);
+],{basename:"/TechHub"});
 return <RouterProvider router={router} />
 }
 
